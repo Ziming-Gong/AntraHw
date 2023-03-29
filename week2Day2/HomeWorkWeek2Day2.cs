@@ -7,59 +7,43 @@ namespace projects
 		{
 		}
 
-        public List<List<Integer>> threeSum(int[] nums)
-        {
-            int N = nums.length;
-            Arrays.sort(nums);
-            List<List<Integer>> ans = new ArrayList<>();
-            for (int i = 0; i < N - 2; i++)
-            {
-                if (i != 0 && nums[i - 1] == nums[i])
-                {
-                    continue;
-                }
-                if (nums[i] > 0)
-                {
-                    break;
-                }
-                f(ans, nums, i + 1, 0 - nums[i]);
+        public IList<IList<int>> ThreeSum(int[] nums) {
+		IList<IList<int>> ans = new List<IList<int>>();
+		int n = nums.Length;
+		Array.Sort(nums);
+		HashSet<string> set = new HashSet<string>();
+		for(int i = 0; i < nums.Length - 2; i ++){
+		    int target = - nums[i];
+		    for(int j = i + 1; j < nums.Length - 1; j ++){
+			String str = Convert.ToString(target) + '_' +Convert.ToString(target - nums[j]);
+			if(bs(j + 1, n - 1, nums, target - nums[j]) && !set.Contains(str)){
+			    IList<int> cur = new List<int>();
+			    cur.Add(nums[i]);
+			    cur.Add(nums[j]);
+			    cur.Add(target - nums[j]);
+			    ans.Add(cur);
+			    set.Add(str);
 
-            }
-            return ans;
-        }
+			}
+		    }
+		}
+		return ans;
 
-        public void f(List<List<Integer>> ans, int[] nums, int begin, int target)
-        {
-            int L = begin;
-            int R = nums.length - 1;
-            while (L < R && R >= begin && L < nums.length)
-            {
-                if (nums[L] + nums[R] == target)
-                {
-                    List<Integer> list = new ArrayList<>();
-                    list.add(-target);
-                    list.add(nums[L++]);
-                    list.add(nums[R--]);
-                    ans.add(list);
-                }
-                else if (nums[L] + nums[R] < target)
-                {
-                    L++;
-                }
-                else
-                {
-                    R--;
-                }
-                while (L < nums.length && L != begin && nums[L] == nums[L - 1])
-                {
-                    L++;
-                }
-                while (R > begin && R < nums.length - 1 && nums[R] == nums[R + 1])
-                {
-                    R--;
-                }
-            }
-        }
-    }
+	    }
+	    public bool bs(int l, int r, int[] arr, int target){
+		int m;
+		while(l <= r){
+		    m = (l + r) >> 1;
+		    if(arr[m] == target){
+			return true;
+		    }else if(arr[m] > target){
+			r = m - 1;
+		    }else{
+			l = m + 1;
+		    }
+		}
+		return false;
+	    }
+    	}
 }
 
