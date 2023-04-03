@@ -1,0 +1,15 @@
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/bin/Debug/net6.0/Week2Day3
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/bin/Debug/net6.0/Week2Day3.deps.json
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/bin/Debug/net6.0/Week2Day3.runtimeconfig.json
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/bin/Debug/net6.0/Week2Day3.dll
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/bin/Debug/net6.0/Week2Day3.pdb
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.csproj.AssemblyReference.cache
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.AssemblyInfoInputs.cache
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.AssemblyInfo.cs
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.csproj.CoreCompileInputs.cache
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.dll
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/refint/Week2Day3.dll
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.pdb
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/Week2Day3.genruntimeconfig.cache
+/Users/ming/Desktop/Work/antra/FullStack/week2Day3/Week2Day3/Week2Day3/obj/Debug/net6.0/ref/Week2Day3.dll
