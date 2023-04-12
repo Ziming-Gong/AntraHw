@@ -1,0 +1,12 @@
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/bin/Debug/net6.0/ApplicationCore.deps.json
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/bin/Debug/net6.0/ApplicationCore.dll
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/bin/Debug/net6.0/ApplicationCore.pdb
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.csproj.AssemblyReference.cache
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.AssemblyInfoInputs.cache
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.AssemblyInfo.cs
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.csproj.CoreCompileInputs.cache
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.dll
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/refint/ApplicationCore.dll
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ApplicationCore.pdb
+/Users/ming/Desktop/Work/antra/FullStack/Week3Day1HW/ApplicationCore/obj/Debug/net6.0/ref/ApplicationCore.dll
