@@ -5,6 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ApplicationCore.Contracts.Services;
 using Infrastructure.Service;
+using ApplicationCore.Entities;
+using ApplicationCore.Models;
+/*
+        Task<int> UpdateCandidateAsync(CandidateRequestModel model);
+        Task<int> DeleteCandidateAsync(int id);
+        //Task <CandidateInfoResponseModel> GetCandidateInfo(int id);
+        Task<IEnumerable<CandidateResponseModel>> GetAllCandidates();
+        Task<CandidateResponseModel> GetCandidateByIdAsync(int id);
+ */
 
 
 namespace HRAPI.Controllers
@@ -36,22 +45,55 @@ namespace HRAPI.Controllers
             return "value";
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpGet]
+        [Route("GetAllCandidate")]
+        public IActionResult GetAllCandidate()
         {
+            var result = _candidateService.GetAllCandidates;
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("CreateUser")]
+        public IActionResult CreateCandidate(string firstname, string lastname, string email)
+        {
+            var candidate = new CandidateRequestModel { FirstName = firstname, LastName = lastname, Email = email };
+            _candidateService.AddCandidateAsync(candidate);
+            return Ok(candidate);
+            
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, string firstname, string lastname, string email)
         {
+            var model = new CandidateRequestModel { FirstName = firstname, LastName = lastname, Email = email };
+            try
+            {
+                var result = _candidateService.UpdateCandidateAsync(model);
+                return Ok(result);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return BadRequest(id);
+            }
+            
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                var res = _candidateService.DeleteCandidateAsync(id);
+                return Ok(res);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception("oops");
+            }
         }
     }
 }
