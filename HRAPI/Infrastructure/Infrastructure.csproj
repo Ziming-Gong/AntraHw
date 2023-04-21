@@ -21,12 +21,14 @@
     <None Remove="Repositories\" />
     <None Remove="Service\" />
     <None Remove="Helper\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Repositories\" />
     <Folder Include="Service\" />
     <Folder Include="Helper\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />

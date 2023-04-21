@@ -5,7 +5,7 @@ namespace ApplicationCore.Entities
 {
 	public class Submission
 	{
-
+        [Key]
         public int Id { get; set; }
 
         public int JobRequirementId { get; set; }

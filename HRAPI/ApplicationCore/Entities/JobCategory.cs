@@ -5,7 +5,7 @@ namespace ApplicationCore.Entities
 {
 	public class JobCategory
 	{
-
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Required")]
         [MaxLength(128, ErrorMessage = "Max 128 characters")]

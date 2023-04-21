@@ -7,6 +7,7 @@ namespace ApplicationCore.Entities
 
 	public class Candidate
 	{
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Required")]
         [StringLength(50, ErrorMessage = "Max 50 characters")]

@@ -32,23 +32,24 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("MiddleName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ResumeURL")
                         .IsRequired()
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -57,25 +58,17 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("ApplicationCore.Entities.EmployeeRequirementType", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<int>("EmployeeTypeId")
                         .HasColumnType("int");
 
                     b.Property<int>("JobRequirementId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("EmployeeTypeId");
+                    b.HasKey("EmployeeTypeId", "JobRequirementId");
 
                     b.HasIndex("JobRequirementId");
 
-                    b.ToTable("EmployeeRequirementTypes");
+                    b.ToTable("EmployeeRequirementTypes", (string)null);
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.EmployeeType", b =>
@@ -88,11 +81,12 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("TypeName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmployeeTypes");
+                    b.ToTable("EmployeeTypes", (string)null);
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.JobCategory", b =>
@@ -105,7 +99,8 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.HasKey("Id");
 
@@ -133,16 +128,18 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HiringManagerId")
+                    b.Property<int?>("HiringManagerId")
                         .HasColumnType("int");
 
                     b.Property<string>("HiringManagerName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("JobCategoryId")
+                    b.Property<int?>("JobCategoryId")
                         .HasColumnType("int");
 
                     b.Property<int>("NumberOfPosition")
@@ -152,7 +149,9 @@ namespace Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -249,9 +248,7 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("ApplicationCore.Entities.JobCategory", "JobCategory")
                         .WithMany("JobRequirements")
-                        .HasForeignKey("JobCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("JobCategoryId");
 
                     b.Navigation("JobCategory");
                 });
@@ -270,7 +267,7 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("ApplicationCore.Entities.Submission", b =>
                 {
                     b.HasOne("ApplicationCore.Entities.Candidate", "Candidate")
-                        .WithMany()
+                        .WithMany("Submissions")
                         .HasForeignKey("CandidateId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -284,6 +281,11 @@ namespace Infrastructure.Migrations
                     b.Navigation("Candidate");
 
                     b.Navigation("JobRequirement");
+                });
+
+            modelBuilder.Entity("ApplicationCore.Entities.Candidate", b =>
+                {
+                    b.Navigation("Submissions");
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.EmployeeType", b =>

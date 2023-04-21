@@ -5,7 +5,7 @@ namespace ApplicationCore.Entities
 {
 	public class JobRequirement
 	{
-
+        [Key]
         public int Id { get; set; }
 
         public int NumberOfPosition { get; set; }

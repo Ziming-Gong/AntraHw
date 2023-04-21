@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace ApplicationCore.Entities
 {
 	public class Status
 	{
-
+        [Key]
         public int Id { get; set; }
 
         public string State { get; set; }
