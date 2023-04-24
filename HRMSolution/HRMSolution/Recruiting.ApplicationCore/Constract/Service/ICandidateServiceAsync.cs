@@ -1,9 +1,10 @@
 using Recruiting.ApplicationCore.Entity;
+using Recruiting.ApplicationCore.Models;
 
 namespace Recruiting.ApplicationCore.Constract.Service;
 
 public interface ICandidateServiceAsync
 {
-    Task<IEnumerable<Candidate>> GetAll();
-    Task<int> AddCandidateAsync(Candidate candidate);
+    Task<IEnumerable<CandidateResponseModel>> GetAll();
+    Task<int> AddCandidateAsync(CandidateRequestModel candidateRequestModel);
 }

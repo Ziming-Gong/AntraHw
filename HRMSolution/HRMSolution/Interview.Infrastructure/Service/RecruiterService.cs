@@ -20,7 +20,7 @@ public class RecruiterService : IRecruiterService
         var res = await _recruiterRepository.GetByIdAsync(id);
         if (res != null)
         {
-            var response = MapHelpper.ToResponseModel(res);
+            var response = res.ToResponseModel();
             return response;
         }
         else

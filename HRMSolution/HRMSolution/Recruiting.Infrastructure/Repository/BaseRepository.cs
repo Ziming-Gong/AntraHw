@@ -7,9 +7,9 @@ namespace Recruiting.Infrastructure.Repository;
 public class BaseRepository<T> : IRepositoryAsync<T> where T:class
 {
     private readonly RecruitingDbContext _context;
-    public BaseRepository(RecruitingDbContext _context)
+    public BaseRepository(RecruitingDbContext context)
     {
-        this._context = _context;
+        this._context = context;
     }
     public async Task<IEnumerable<T>> GetAll()
     {

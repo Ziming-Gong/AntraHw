@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Recruiting.ApplicationCore.Constract.Service;
 using Recruiting.ApplicationCore.Entity;
+using Recruiting.ApplicationCore.Models;
 
 namespace RecruitingAPI.Controllers;
 
@@ -20,7 +21,7 @@ public class CandidateController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(Candidate candidate)
+    public async Task<IActionResult> Post(CandidateRequestModel candidate)
     {
         return Ok(await _candidateService.AddCandidateAsync(candidate));
     }
