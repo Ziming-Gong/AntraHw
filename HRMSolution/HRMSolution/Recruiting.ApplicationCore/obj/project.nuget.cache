@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oLNQ9DEC3gDWythYIDHFkAqq2nzddz6MrxJLtYD2A8N6qzoETtW4ahPx9uqtGYZ5bkUAg2eYAlL0qiy0GimAtA==",
+  "dgSpecHash": "mcDivCdLZUnLrEvh4Q0nHOb871RsVD5l1DxTr13kZE3rkn/nX0u7Xaz0msvnXBv3Nv1GAPAL1qCFx/HoPnrcgg==",
   "success": true,
-  "projectFilePath": "/Users/ming/Desktop/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj",
+  "projectFilePath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj",
   "expectedPackageFiles": [
     "/Users/ming/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/ming/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",

@@ -869,6 +869,35 @@
             "rid": "win"
           }
         }
+      },
+      "Interview.ApplicationCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.16",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
+        },
+        "compile": {
+          "bin/placeholder/Interview.ApplicationCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interview.ApplicationCore.dll": {}
+        }
+      },
+      "Interview.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Interview.ApplicationCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.16",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
+        },
+        "compile": {
+          "bin/placeholder/Interview.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interview.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2215,11 +2244,23 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Interview.ApplicationCore/1.0.0": {
+      "type": "project",
+      "path": "../Interview.ApplicationCore/Interview.ApplicationCore.csproj",
+      "msbuildProject": "../Interview.ApplicationCore/Interview.ApplicationCore.csproj"
+    },
+    "Interview.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Interview.Infrastructure/Interview.Infrastructure.csproj",
+      "msbuildProject": "../Interview.Infrastructure/Interview.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Interview.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.16",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.16",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.16",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -2231,11 +2272,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ming/Desktop/HRMSolution/HRMSolution/InterviewAPI/InterviewAPI.csproj",
+      "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/InterviewAPI/InterviewAPI.csproj",
       "projectName": "InterviewAPI",
-      "projectPath": "/Users/ming/Desktop/HRMSolution/HRMSolution/InterviewAPI/InterviewAPI.csproj",
+      "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/InterviewAPI/InterviewAPI.csproj",
       "packagesPath": "/Users/ming/.nuget/packages/",
-      "outputPath": "/Users/ming/Desktop/HRMSolution/HRMSolution/InterviewAPI/obj/",
+      "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/InterviewAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ming/.nuget/NuGet/NuGet.Config"
@@ -2249,7 +2290,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Interview.Infrastructure/Interview.Infrastructure.csproj": {
+              "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Interview.Infrastructure/Interview.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -2263,6 +2308,12 @@
         "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.16, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.16, )"
           },

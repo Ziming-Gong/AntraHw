@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ming/Desktop/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj": {}
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj": {}
   },
   "projects": {
-    "/Users/ming/Desktop/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj": {
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ming/Desktop/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj",
+        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj",
         "projectName": "Recruiting.ApplicationCore",
-        "projectPath": "/Users/ming/Desktop/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj",
+        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj",
         "packagesPath": "/Users/ming/.nuget/packages/",
-        "outputPath": "/Users/ming/Desktop/HRMSolution/HRMSolution/Recruiting.ApplicationCore/obj/",
+        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ming/.nuget/NuGet/NuGet.Config"
