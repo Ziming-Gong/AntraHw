@@ -10,9 +10,9 @@ public static class MapHelpper
         return new RecruiterResponseModel
         {
             RecruiterId = recruiter.RecruiterId,
-            EmployeeId = recruiter.EmployeeId,
             FirstName = recruiter.FirstName,
-            LastName = recruiter.LastName
+            LastName = recruiter.LastName,
+            EmployeeId = recruiter.EmployeeId
         };
     }
     

@@ -10,5 +10,5 @@ public class InterviewDbContext : DbContext
         
     }
 
-    private DbSet<Recruiter> Recruiters { get; set; }
+    public DbSet<Recruiter> Recruiters { get; set; }
 }

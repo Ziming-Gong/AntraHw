@@ -11,10 +11,10 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         _context = context;
     }
-    public async Task<T> GetByIdAsync(int RecruiterId)
+    public async Task<T> GetByIdAsync(int id)
     {
-        var response =  await _context.Set<T>().FindAsync(RecruiterId);
-        return response;
+        return await _context.Set<T>().FindAsync(id);
+        // return response;
     }
 
     public async Task<int> InsertAsync(T entity)

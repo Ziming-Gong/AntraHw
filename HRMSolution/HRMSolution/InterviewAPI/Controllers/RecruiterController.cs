@@ -32,6 +32,6 @@ public class RecruiterController : Controller
     [Route("GetRecruiterById")]
     public async Task<IActionResult> GetById(int id)
     {
-        return Ok(_recruiterService.GetById(id));
+        return Ok(_recruiterService.GetByIdAsync(id));
     }
 }

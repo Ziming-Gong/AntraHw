@@ -15,10 +15,20 @@ public class RecruiterService : IRecruiterService
         _recruiterRepository = recruiterRepository;
     }
 
-    public async Task<RecruiterResponseModel> GetById(int id)
+    public async Task<RecruiterResponseModel> GetByIdAsync(int id)
     {
         var res = await _recruiterRepository.GetByIdAsync(id);
-        return MapHelpper.ToResponseModel(res);
+        if (res != null)
+        {
+            var response = MapHelpper.ToResponseModel(res);
+            return response;
+        }
+        else
+        {
+            throw new Exception("This Recruiter Not Found");
+        }
+        
+        
     }
 
     public async Task<int> AddRecruiter(RecruiterRequestModel model)
@@ -26,9 +36,9 @@ public class RecruiterService : IRecruiterService
         Recruiter recruiter = new Recruiter
         {
             RecruiterId = model.RecruiterId,
-            EmployeeId = model.EmployeeId,
             FirstName = model.FirstName,
-            LastName = model.LastName
+            LastName = model.LastName,
+            EmployeeId = model.EmployeeId
         };
         var res = await _recruiterRepository.InsertAsync(recruiter);
         return res;
