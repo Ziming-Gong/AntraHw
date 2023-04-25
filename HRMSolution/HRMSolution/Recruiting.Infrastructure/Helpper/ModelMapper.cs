@@ -29,5 +29,14 @@ public static class ModelMapper
             RejectedOn = submission.RejectedOn
         };
     }
+
+    public static SubmissionStatusResponseModel ToSubmissionStatusResponseModel(this SubmissionStatus submissionStatus)
+    {
+        return new SubmissionStatusResponseModel
+        {
+            LookUpCode = submissionStatus.LookUpCode,
+            Description = submissionStatus.Description
+        };
+    }
     
 }
