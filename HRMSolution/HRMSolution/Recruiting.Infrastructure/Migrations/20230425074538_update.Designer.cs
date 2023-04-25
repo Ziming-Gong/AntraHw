@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Recruiting.Infrastructure.Data;
 
@@ -11,9 +12,10 @@ using Recruiting.Infrastructure.Data;
 namespace Recruiting.Infrastructure.Migrations
 {
     [DbContext(typeof(RecruitingDbContext))]
-    partial class RecruitingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230425074538_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,56 +53,6 @@ namespace Recruiting.Infrastructure.Migrations
                     b.ToTable("Candidates");
                 });
 
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.EmployeeRequirementType", b =>
-                {
-                    b.Property<int>("EmployeeTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("JobRequirementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeeTypeId", "JobRequirementId");
-
-                    b.HasIndex("JobRequirementId");
-
-                    b.ToTable("EmployeeRequirementType", (string)null);
-                });
-
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.EmployeeType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("TypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EmployeeType");
-                });
-
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.JobCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("JobCategory");
-                });
-
             modelBuilder.Entity("Recruiting.ApplicationCore.Entity.JobRequirement", b =>
                 {
                     b.Property<int>("JobRequirementId")
@@ -131,9 +83,6 @@ namespace Recruiting.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("JobCategoryId")
-                        .HasColumnType("int");
-
                     b.Property<int>("NumberOfPositions")
                         .HasColumnType("int");
 
@@ -145,8 +94,6 @@ namespace Recruiting.Infrastructure.Migrations
                         .HasColumnType("nvarchar(512)");
 
                     b.HasKey("JobRequirementId");
-
-                    b.HasIndex("JobCategoryId");
 
                     b.ToTable("JobRequirements");
                 });
@@ -181,47 +128,6 @@ namespace Recruiting.Infrastructure.Migrations
                     b.ToTable("Submission", (string)null);
                 });
 
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.SubmissionStatus", b =>
-                {
-                    b.Property<int>("LookUpCode")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(512)");
-
-                    b.HasKey("LookUpCode");
-
-                    b.ToTable("SubmissionStatus");
-                });
-
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.EmployeeRequirementType", b =>
-                {
-                    b.HasOne("Recruiting.ApplicationCore.Entity.EmployeeType", "EmployeeType")
-                        .WithMany("EmployeeRequirementTypes")
-                        .HasForeignKey("EmployeeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Recruiting.ApplicationCore.Entity.JobRequirement", "JobRequirement")
-                        .WithMany("EmployeeRequirementTypes")
-                        .HasForeignKey("JobRequirementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EmployeeType");
-
-                    b.Navigation("JobRequirement");
-                });
-
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.JobRequirement", b =>
-                {
-                    b.HasOne("Recruiting.ApplicationCore.Entity.JobCategory", "JobCategory")
-                        .WithMany("JobRequirements")
-                        .HasForeignKey("JobCategoryId");
-
-                    b.Navigation("JobCategory");
-                });
-
             modelBuilder.Entity("Recruiting.ApplicationCore.Entity.Submission", b =>
                 {
                     b.HasOne("Recruiting.ApplicationCore.Entity.Candidate", "Candidate")
@@ -241,42 +147,14 @@ namespace Recruiting.Infrastructure.Migrations
                     b.Navigation("JobRequirement");
                 });
 
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.SubmissionStatus", b =>
-                {
-                    b.HasOne("Recruiting.ApplicationCore.Entity.Submission", "Submission")
-                        .WithMany("SubmissionStatusList")
-                        .HasForeignKey("LookUpCode")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Submission");
-                });
-
             modelBuilder.Entity("Recruiting.ApplicationCore.Entity.Candidate", b =>
                 {
                     b.Navigation("Submissions");
                 });
 
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.EmployeeType", b =>
-                {
-                    b.Navigation("EmployeeRequirementTypes");
-                });
-
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.JobCategory", b =>
-                {
-                    b.Navigation("JobRequirements");
-                });
-
             modelBuilder.Entity("Recruiting.ApplicationCore.Entity.JobRequirement", b =>
                 {
-                    b.Navigation("EmployeeRequirementTypes");
-
                     b.Navigation("Submissions");
-                });
-
-            modelBuilder.Entity("Recruiting.ApplicationCore.Entity.Submission", b =>
-                {
-                    b.Navigation("SubmissionStatusList");
                 });
 #pragma warning restore 612, 618
         }

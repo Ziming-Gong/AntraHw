@@ -4,11 +4,13 @@ using Recruiting.ApplicationCore.Constract.Service;
 using Recruiting.Infrastructure.Data;
 using Recruiting.Infrastructure.Repository;
 using Recruiting.Infrastructure.Service;
+using RecruitingAPI.Midderware;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = Environment.GetEnvironmentVariable("RecruitingAPIDb");
 // Add services to the container.
-
+builder.Services.AddLogging();
+// builder.Services.AddScoped<ILogger, ILogger>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

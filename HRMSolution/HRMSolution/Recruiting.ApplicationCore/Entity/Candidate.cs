@@ -23,6 +23,8 @@ namespace Recruiting.ApplicationCore.Entity
         [Required]
         [Column(TypeName = "varchar(300)")]
         public string ResumeURL { get; set; }
+        
+        public IEnumerable<Submission> Submissions { get; set; } 
 
 
     }

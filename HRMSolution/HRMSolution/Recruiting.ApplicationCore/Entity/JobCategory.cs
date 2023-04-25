@@ -8,5 +8,6 @@ public class JobCategory
     [Required]
     [StringLength(128)]
     public string Name { get; set; }
+    
     public IEnumerable<JobRequirement> JobRequirements { get; set; }
 }

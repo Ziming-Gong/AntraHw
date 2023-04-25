@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YAWMZf30g86XQliGPAMwvr6nK62/HdWjkQTuFv3mHHQJi3HoKxeiXPiMf55vHwlDJjVtMQqXl71exkTDGWoo2A==",
+  "dgSpecHash": "CGp/4zSp+1eMLcdNKyT2R3irnSTuMELef+w1L4LicRHAHSfbpY/wq1u7coprwz3U65PzgOlM8h0FUkUjdfX+Kw==",
   "success": true,
-  "projectFilePath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/RecruitingAPI.csproj",
+  "projectFilePath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/recruitingapi/RecruitingAPI.csproj",
   "expectedPackageFiles": [
     "/Users/ming/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/ming/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
