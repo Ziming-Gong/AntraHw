@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/userApi/UserAPI.csproj": {}
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/UserAPI.csproj": {}
   },
   "projects": {
     "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/User.ApplicationCore/User.ApplicationCore.csproj": {
@@ -134,14 +134,14 @@
         }
       }
     },
-    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/userApi/UserAPI.csproj": {
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/UserAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/userApi/UserAPI.csproj",
+        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/UserAPI.csproj",
         "projectName": "UserAPI",
-        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/userApi/UserAPI.csproj",
+        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/UserAPI.csproj",
         "packagesPath": "/Users/ming/.nuget/packages/",
-        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/userApi/obj/",
+        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ming/.nuget/NuGet/NuGet.Config"

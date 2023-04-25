@@ -5,6 +5,10 @@ namespace Recruiting.ApplicationCore.Constract.Service;
 
 public interface ICandidateServiceAsync
 {
-    Task<IEnumerable<CandidateResponseModel>> GetAll();
+    Task<IEnumerable<CandidateResponseModel>> GetAllCandidateAsync();
     Task<int> AddCandidateAsync(CandidateRequestModel candidateRequestModel);
+    Task<int> UpdateCandidateAsync(CandidateRequestModel candidateRequestModel);
+    Task<int> DeleteCandidateAsync(int id);
+    Task<CandidateResponseModel> GetCandidateByIdAsync(int id);
+
 }

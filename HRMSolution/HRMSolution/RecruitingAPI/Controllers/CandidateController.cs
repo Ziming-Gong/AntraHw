@@ -15,14 +15,38 @@ public class CandidateController : Controller
         this._candidateService = candidateServiceAsync;
     }
     [HttpGet]
+    [Route("GetAllCandidate")]
     public async Task<IActionResult> GetAll()
     {
-        return Ok(await _candidateService.GetAll());
+        return Ok(await _candidateService.GetAllCandidateAsync());
     }
 
     [HttpPost]
+    [Route("CreateCandidate")]
     public async Task<IActionResult> Post(CandidateRequestModel candidate)
     {
         return Ok(await _candidateService.AddCandidateAsync(candidate));
+    }
+
+    [HttpGet]
+    [Route("GetCandidateById/{id}")]
+    public async Task<IActionResult> GetCandidateById(int id)
+    {
+        var candidate = await _candidateService.GetCandidateByIdAsync(id);
+        return Ok(candidate);
+    }
+
+    [HttpDelete]
+    [Route("DeleteCandidateById/{id}")]
+    public async Task<IActionResult> DeleteCandidateById(int id)
+    {
+        return Ok(await _candidateService.DeleteCandidateAsync(id));
+    }
+
+    [HttpPut]
+    [Route("update")]
+    public async Task<IActionResult> Update(CandidateRequestModel model)
+    {
+        return Ok(await _candidateService.UpdateCandidateAsync(model));
     }
 }
