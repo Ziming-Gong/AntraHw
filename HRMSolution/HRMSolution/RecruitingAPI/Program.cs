@@ -31,10 +31,11 @@ builder.Services.AddDbContext<RecruitingDbContext>(options =>
 });
 //Repo Injection
 builder.Services.AddScoped<ICandidateRepositoryAsync, CandidateRepositoryAsync>();
-
+builder.Services.AddScoped<ISubmissionRepository, SubmissionRepository>();
 
 //Service Injection
 builder.Services.AddScoped<ICandidateServiceAsync, CandidateServiceAsync>();
+builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 
 
 var app = builder.Build();

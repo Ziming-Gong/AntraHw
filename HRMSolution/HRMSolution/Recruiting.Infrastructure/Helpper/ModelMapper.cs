@@ -16,5 +16,18 @@ public static class ModelMapper
             ResumeURL = candidate.ResumeURL
         };
     }
+
+    public static SubmissionResponseModel ToSubmissionResponseModel(this Submission submission)
+    {
+        return new SubmissionResponseModel
+        {
+            CandidateId = submission.CandidateId,
+            ConfirmedOn = submission.ConfirmedOn,
+            SubmissionId = submission.SubmissionId,
+            SubmittedOn = submission.SubmittedOn,
+            SubmissionStatusCode = submission.SubmissionStatusCode,
+            RejectedOn = submission.RejectedOn
+        };
+    }
     
 }
