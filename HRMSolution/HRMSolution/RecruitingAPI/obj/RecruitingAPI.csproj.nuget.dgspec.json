@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/recruitingapi/RecruitingAPI.csproj": {}
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/RecruitingAPI.csproj": {}
   },
   "projects": {
     "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj": {
@@ -146,14 +146,14 @@
         }
       }
     },
-    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/recruitingapi/RecruitingAPI.csproj": {
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/RecruitingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/recruitingapi/RecruitingAPI.csproj",
+        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/RecruitingAPI.csproj",
         "projectName": "RecruitingAPI",
-        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/recruitingapi/RecruitingAPI.csproj",
+        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/RecruitingAPI.csproj",
         "packagesPath": "/Users/ming/.nuget/packages/",
-        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/recruitingapi/obj/",
+        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ming/.nuget/NuGet/NuGet.Config"
