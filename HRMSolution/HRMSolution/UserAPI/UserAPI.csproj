@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\JWTAuthenticationsManager\JWTAuthenticationsManager.csproj" />
       <ProjectReference Include="..\User.Infrastructure\User.Infrastructure.csproj" />
     </ItemGroup>
 

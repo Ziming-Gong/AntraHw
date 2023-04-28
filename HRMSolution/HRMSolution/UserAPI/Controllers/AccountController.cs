@@ -1,3 +1,6 @@
+using JWTAuthenticationsManager;
+using JWTAuthenticationsManager.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
@@ -7,13 +10,16 @@ namespace UserAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+// [Authorize]
 public class AccountController : ControllerBase
 {
     private readonly IAccountService _accountService;
+    private readonly JWTTokenHandler _jwtTokenHandler;
 
-    public AccountController(IAccountService service)
+    public AccountController(IAccountService service, JWTTokenHandler jwtTokenHandler)
     {
         _accountService = service;
+        _jwtTokenHandler = jwtTokenHandler;
     }
 
     [HttpGet("GetAll")]
@@ -45,4 +51,15 @@ public class AccountController : ControllerBase
     {
         return Ok(await _accountService.UpdateAccount(model));
     }
+
+    [HttpPost("CreateToken")]
+    public async Task<IActionResult> Login(AuthenticationRequest request)
+    {
+        var response = _jwtTokenHandler.GenerateToken(request);
+        if (response == null) return Unauthorized();
+        return Ok();    
+    }
+
+
+
 }

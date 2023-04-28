@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onboarding.ApplicationCore"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onboarding.Infrastructure", "Onboarding.Infrastructure\Onboarding.Infrastructure.csproj", "{E594F163-BE49-4F99-9DA9-3A6505F7D516}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTAuthenticationsManager", "JWTAuthenticationsManager\JWTAuthenticationsManager.csproj", "{74BAF9CD-232D-4663-B5AC-853B96BCFF60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,5 +107,9 @@ Global
 		{E594F163-BE49-4F99-9DA9-3A6505F7D516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E594F163-BE49-4F99-9DA9-3A6505F7D516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E594F163-BE49-4F99-9DA9-3A6505F7D516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74BAF9CD-232D-4663-B5AC-853B96BCFF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74BAF9CD-232D-4663-B5AC-853B96BCFF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74BAF9CD-232D-4663-B5AC-853B96BCFF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74BAF9CD-232D-4663-B5AC-853B96BCFF60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

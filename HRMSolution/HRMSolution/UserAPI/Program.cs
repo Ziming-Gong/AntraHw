@@ -1,3 +1,4 @@
+using JWTAuthenticationsManager;
 using Microsoft.EntityFrameworkCore;
 using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
@@ -14,6 +15,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCustomJwtTokenService(); // Custom Token
 
 //DB context
 builder.Services.AddDbContext<UserDbContext>(options =>
@@ -37,8 +39,8 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 
-
-
+// Token
+builder.Services.AddSingleton<JWTTokenHandler, JWTTokenHandler>();
 
 
 var app = builder.Build();
@@ -49,6 +51,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseAuthentication();
 
 app.UseHttpsRedirection();
 

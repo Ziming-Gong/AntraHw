@@ -89,3 +89,6 @@
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/obj/Debug/net6.0/UserAPI.pdb
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/obj/Debug/net6.0/UserAPI.genruntimeconfig.cache
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/obj/Debug/net6.0/ref/UserAPI.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/JWTAuthenticationsManager.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/JWTAuthenticationsManager.pdb
