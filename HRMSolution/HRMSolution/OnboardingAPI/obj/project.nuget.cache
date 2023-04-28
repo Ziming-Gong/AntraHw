@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "4geWi/cU3FzvB2DYYrrGQ9BK8S+TpcgxuOaPRzHJEM6Zq4e9CW6v/HaWV8xizrTJi6PHaeVil3HmZQfbKhHa0g==",
+  "success": true,
+  "projectFilePath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/OnboardingAPI/OnboardingAPI.csproj",
+  "expectedPackageFiles": [
+    "/Users/ming/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/ming/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/ming/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/ming/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/ming/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/ming/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
