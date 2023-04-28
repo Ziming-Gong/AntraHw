@@ -2,7 +2,7 @@ using Recruiting.ApplicationCore.Constract.Repository;
 using Recruiting.ApplicationCore.Constract.Service;
 using Recruiting.ApplicationCore.Entity;
 using Recruiting.ApplicationCore.Models;
-
+using Recruiting.Infrastructure.Helpper;
 namespace Recruiting.Infrastructure.Service;
 
 public class JobRequirementsService : IJobRequirementService
@@ -48,6 +48,7 @@ public class JobRequirementsService : IJobRequirementService
         JobRequirement jobRequirement = new JobRequirement();
         if (model != null)
         {
+            
             jobRequirement.JobRequirementId = model.JobRequirementId;
             jobRequirement.Description = model.Description;
             jobRequirement.Title = model.Title;
@@ -89,7 +90,7 @@ public class JobRequirementsService : IJobRequirementService
         }
         else
         {
-            throw new NotFoundException("JobRequirement", id);
+            throw new Exception("JobRequirement is not exist");
         }
     }
 }

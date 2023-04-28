@@ -38,5 +38,23 @@ public static class ModelMapper
             Description = submissionStatus.Description
         };
     }
+
+    public static JobRequirementResponseModel ToJobRequirementResponseModel(this JobRequirement jobRequirement)
+    {
+        return new JobRequirementResponseModel
+        {
+            JobRequirementId = jobRequirement.JobRequirementId,
+            Description = jobRequirement.Description,
+            Title = jobRequirement.Title,
+            ClosedOn = jobRequirement.ClosedOn,
+            ClosedReason = jobRequirement.ClosedReason,
+            HiringManagerId = jobRequirement.HiringManagerId,
+            HiringManagerName = jobRequirement.HiringManagerName,
+            StartDate = jobRequirement.StartDate,
+            NumberOfPositions = jobRequirement.NumberOfPositions,
+            CreatOn = jobRequirement.CreatOn,
+            IsActive = jobRequirement.IsActive
+        };
+    }
     
 }
