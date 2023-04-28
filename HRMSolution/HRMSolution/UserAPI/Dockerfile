@@ -3,6 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 ENV AuthenticationDb = "Server=localhost;Database=UserAPIDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["UserAPI/UserAPI.csproj", "UserAPI/"]

@@ -1,0 +1,35 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  Authenticationapi:
+    build:
+      context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
+      dockerfile: "UserAPI/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net6.0/UserAPI.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+    image: "authenticationapi:dev"
+    ports: []
+    volumes:
+    - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI:/app:rw"
+    working_dir: "/app"
+  recruitingapi:
+    build:
+      context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
+      dockerfile: "RecruitingAPI/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net6.0/RecruitingAPI.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+    image: "recruitingapi:dev"
+    ports: []
+    volumes:
+    - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI:/app:rw"
+    working_dir: "/app"

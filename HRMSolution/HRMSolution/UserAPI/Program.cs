@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
+using User.ApplicationCore.Models;
 using User.Infrastructure.Data;
 using User.Infrastructure.Repositories;
 using User.Infrastructure.Services;
@@ -30,9 +31,11 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 
 // Repo Injection
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
 // Server Injection
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 
 

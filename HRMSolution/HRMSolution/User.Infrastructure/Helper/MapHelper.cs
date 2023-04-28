@@ -6,18 +6,6 @@ namespace User.Infrastructure.Helper;
 public static class MapHelper
 {
 
-    /*
-     * public int UserId { get; set; }
-    public int EmployeeId { get; set; }
-    public string Email { get; set; }
-    public int RoleId { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string HashPassWord { get; set; }
-    public string Salt { get; set; }
-    
-    public List<UserRole> UserRoles { get; set; }
-     */
     public static AccountResponseModel ToAccountResponseModel(this Account account)
     {
         return new AccountResponseModel
@@ -31,6 +19,17 @@ public static class MapHelper
             HashPassWord = account.HashPassWord,
             Salt = account.Salt,
             UserRoles = account.UserRoles
+        };
+    }
+
+
+    public static RoleResponseModel ToRoleResponseModel(this Role role)
+    {
+        return new RoleResponseModel
+        {
+            RoleId = role.RoleId,
+            Name = role.Name,
+            Description = role.Description
         };
     }
     
