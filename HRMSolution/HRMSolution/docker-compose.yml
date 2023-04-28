@@ -4,3 +4,8 @@
     build:
       context: .
       dockerfile: RecruitingAPI/Dockerfile
+  Authenticationapi:
+    image: authenticationapi
+    build:
+      context: .
+      dockerfile: UserAPI/Dockerfile

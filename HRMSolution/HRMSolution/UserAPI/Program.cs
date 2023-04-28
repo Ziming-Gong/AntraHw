@@ -1,8 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using User.ApplicationCore.Constract.Repositories;
+using User.ApplicationCore.Constract.Services;
 using User.Infrastructure.Data;
+using User.Infrastructure.Repositories;
+using User.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = Environment.GetEnvironmentVariable("AuthenticationDb");
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -13,9 +17,26 @@ builder.Services.AddSwaggerGen();
 //DB context
 builder.Services.AddDbContext<UserDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UserAPIDb"));
+    // if (connectionString.Length > 1)
+    // {
+    //     options.UseSqlServer(connectionString);
+    // }
+    // else
+    // { 
+        options.UseSqlServer(builder.Configuration.GetConnectionString("UserAPIDb"));
+    // }
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
+// Repo Injection
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+
+// Server Injection
+builder.Services.AddScoped<IAccountService, AccountService>();
+
+
+
+
 
 var app = builder.Build();
 

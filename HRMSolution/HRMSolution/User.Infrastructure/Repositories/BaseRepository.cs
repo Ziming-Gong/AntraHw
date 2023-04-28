@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using User.ApplicationCore.Constract.Repositories;
+using User.ApplicationCore.Entity;
+using User.ApplicationCore.Exceptions;
 using User.Infrastructure.Data;
 
 namespace User.Infrastructure.Repositories;
@@ -25,7 +27,12 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
 
     public async Task<int> DeleteById(int id)
     {
-        _userDbContext.Remove(id);
+        var cur = await _userDbContext.Set<Account>().FindAsync(id);
+        if (cur == null)
+        {
+            throw new NotFoundException("Account", id);
+        }
+        _userDbContext.Remove(cur);
         return  _userDbContext.SaveChanges();
     }
 
