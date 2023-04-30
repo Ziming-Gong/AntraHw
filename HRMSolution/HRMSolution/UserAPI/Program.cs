@@ -34,10 +34,12 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 // Repo Injection
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 
 // Server Injection
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
 // Token
 builder.Services.AddSingleton<JWTTokenHandler, JWTTokenHandler>();

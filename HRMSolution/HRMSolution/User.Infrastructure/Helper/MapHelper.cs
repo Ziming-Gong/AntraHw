@@ -32,5 +32,14 @@ public static class MapHelper
             Description = role.Description
         };
     }
-    
+
+    public static UserRoleResponseModel ToUserRoleResponseModel(this UserRole userRole)
+    {
+        return new UserRoleResponseModel
+        {
+            Id = userRole.Id,
+            RoleId = userRole.RoleId,
+            UserId = userRole.UserId
+        };
+    }
 }
