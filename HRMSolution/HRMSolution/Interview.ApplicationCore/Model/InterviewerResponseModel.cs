@@ -1,13 +1,9 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace Interview.ApplicationCore.Model;
 
-public class RecruiterRequestModel
+public class InterviewerResponseModel
 {
-    
-    public int RecruiterId { get; set; }
+    public int InterviewerId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int EmployeeId { get; set; }
-    
 }
