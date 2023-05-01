@@ -6,4 +6,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Constracts\Repositories\" />
+      <Folder Include="Constracts\Services\" />
+      <Folder Include="Exceptions\" />
+      <Folder Include="Model\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    </ItemGroup>
+
 </Project>

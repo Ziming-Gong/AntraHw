@@ -4,14 +4,14 @@
     "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj": {}
   },
   "projects": {
-    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj": {
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.ApplicationCore/Onboarding.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj",
-        "projectName": "Onboarding.Infrastructure",
-        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj",
+        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.ApplicationCore/Onboarding.ApplicationCore.csproj",
+        "projectName": "Onboarding.ApplicationCore",
+        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.ApplicationCore/Onboarding.ApplicationCore.csproj",
         "packagesPath": "/Users/ming/.nuget/packages/",
-        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/obj/",
+        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.ApplicationCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ming/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,79 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj",
+        "projectName": "Onboarding.Infrastructure",
+        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/Onboarding.Infrastructure.csproj",
+        "packagesPath": "/Users/ming/.nuget/packages/",
+        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ming/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.ApplicationCore/Onboarding.ApplicationCore.csproj": {
+                "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Onboarding.ApplicationCore/Onboarding.ApplicationCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
