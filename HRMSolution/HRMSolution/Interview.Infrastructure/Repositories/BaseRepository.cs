@@ -11,31 +11,42 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         _context = context;
     }
+
     public async Task<T> GetByIdAsync(int id)
     {
         return await _context.Set<T>().FindAsync(id);
-        // return response;a
     }
 
     public async Task<int> InsertAsync(T entity)
     {
-        await _context.AddAsync(entity);
-        return _context.SaveChanges();
+        _context.Set<T>().AddAsync(entity);
+        return await _context.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        var response = await _context.Set<T>().ToListAsync();
-        return response;
+        var res = await _context.Set<T>().ToListAsync();
+        return res;
     }
 
-    public Task<int> UpdateAsync(T entity)
+    public async Task<int> UpdateAsync(T entity)
     {
-        throw new NotImplementedException();
+        _context.Entry(entity).State = EntityState.Modified;
+        return await _context.SaveChangesAsync();
     }
 
-    public Task<int> DeleteById(int id)
+    public async Task<int> DeleteById(int id)
     {
-        throw new NotImplementedException();
+        var exist = await _context.Set<T>().FindAsync(id);
+        if (exist != null)
+        {
+            _context.Remove(exist);
+            return await _context.SaveChangesAsync();
+        }
+        else
+        {
+            return 0;
+        }
+
     }
 }

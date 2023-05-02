@@ -1,6 +1,7 @@
 using Interview.ApplicationCore.Constracts.Repositories;
 using Interview.ApplicationCore.Constracts.Services;
 using Interview.ApplicationCore.Entity;
+using Interview.ApplicationCore.Exceptions;
 using Interview.ApplicationCore.Model;
 using Interview.Infrastructure.Helpper;
 using Interview.Infrastructure.Repositories;
@@ -15,19 +16,34 @@ public class RecruiterService : IRecruiterService
         _recruiterRepository = recruiterRepository;
     }
 
-    public Task<int> InsertAsync(RecruiterRequestModel model)
+    
+
+    public async Task<int> DeleteByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _recruiterRepository.DeleteById(id);
     }
 
-    public Task<int> DeleteByIdAsync(int id)
+    public async Task<int> UpdateAsync(RecruiterRequestModel model)
     {
-        throw new NotImplementedException();
-    }
+        var exist = await _recruiterRepository.GetByIdAsync(model.RecruiterId);
+        if (exist == null)
+        {
+            throw new NotFoundException("Recruiter", "Id", model.RecruiterId);
+        }
 
-    public Task<int> UpdateAsync(RecruiterRequestModel model)
-    {
-        throw new NotImplementedException();
+        Recruiter recruiter = new Recruiter();
+        if (model != null)
+        {
+            recruiter.RecruiterId = model.RecruiterId;
+            recruiter.EmployeeId = model.EmployeeId;
+            recruiter.FirstName = model.FirstName;
+            recruiter.LastName = model.LastName;
+            return await _recruiterRepository.UpdateAsync(recruiter);
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     public async Task<RecruiterResponseModel> GetByIdAsync(int id)
@@ -42,17 +58,16 @@ public class RecruiterService : IRecruiterService
         {
             throw new Exception("This Recruiter Not Found");
         }
-        
-        
     }
 
-    public Task<IEnumerable<RecruiterResponseModel>> GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
 
-    public async Task<int> AddRecruiter(RecruiterRequestModel model)
+    public async Task<int> InsertAsync(RecruiterRequestModel model)
     {
+        var exist = await _recruiterRepository.GetByIdAsync(model.RecruiterId);
+        if (exist != null)
+        {
+            throw new HasExistException("Recruiter", "id", model.RecruiterId);
+        }
         Recruiter recruiter = new Recruiter
         {
             RecruiterId = model.RecruiterId,
@@ -64,7 +79,7 @@ public class RecruiterService : IRecruiterService
         return res;
     }
 
-    public async Task<IEnumerable<RecruiterResponseModel>> GetAll()
+    public async Task<IEnumerable<RecruiterResponseModel>> GetAllAsync()
     {
         var recruiters = await _recruiterRepository.GetAllAsync();
         var response = recruiters.Select(x => x.ToResponseModel());
