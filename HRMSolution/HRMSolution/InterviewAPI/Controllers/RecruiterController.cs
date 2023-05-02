@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace InterviewAPI.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class RecruiterController : Controller
+public class RecruiterController : ControllerBase
 {
 
     private readonly IRecruiterService _recruiterService;
@@ -33,5 +33,17 @@ public class RecruiterController : Controller
     public async Task<IActionResult> GetById(int id)
     {
         return Ok(await _recruiterService.GetByIdAsync(id));
+    }
+
+    [HttpDelete("DeleteById")]
+    public async Task<IActionResult> DeleteById(int id)
+    {
+        return Ok(await _recruiterService.DeleteByIdAsync(id));
+    }
+
+    [HttpPut("Update")]
+    public async Task<IActionResult> Update(RecruiterRequestModel model)
+    {
+        return Ok(await _recruiterService.UpdateAsync(model));
     }
 }

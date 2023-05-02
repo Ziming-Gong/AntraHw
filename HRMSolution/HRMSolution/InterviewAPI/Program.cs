@@ -24,11 +24,20 @@ builder.Services.AddDbContext<InterviewDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("InterviewAPIDb"));
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
 // Repo injection
 builder.Services.AddScoped<IRecruiterRepository, RecruiterRepository>();
+builder.Services.AddScoped<IInterviewRepository, InterviewRepository>();
+builder.Services.AddScoped<IInterviewFeedbackRepository, InterviewFeedbackRepository>();
+builder.Services.AddScoped<IInterviewerRepository, InterviewerRepository>();
+builder.Services.AddScoped<IInterviewTypeRepository, InterviewTypeRepository>();
 
 // Service Injection
 builder.Services.AddScoped<IRecruiterService, RecruiterService>();
+builder.Services.AddScoped<IInterviewService, InterviewService>();
+builder.Services.AddScoped<IInterviewFeedBackService, InterviewFeedbackService>();
+builder.Services.AddScoped<IInterviewerService, InterviewerService>();
+builder.Services.AddScoped<IInterviewTypeService, InterviewTypeService>();
 
 var app = builder.Build();
 
