@@ -8,6 +8,11 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// user logger to should query
+// var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+// var optionsBuilder = new DbContextOptionsBuilder<InterviewDbContext>();
+// optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("InterviewAPIDb"));
+// optionsBuilder.UseLoggerFactory(loggerFactory);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -41,3 +46,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+

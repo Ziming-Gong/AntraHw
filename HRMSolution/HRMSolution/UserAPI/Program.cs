@@ -1,4 +1,5 @@
 using JWTAuthenticationsManager;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
@@ -35,7 +36,7 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-
+builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 // Server Injection
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
@@ -43,7 +44,8 @@ builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
 // Token
 builder.Services.AddSingleton<JWTTokenHandler, JWTTokenHandler>();
-
+// Identity
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 

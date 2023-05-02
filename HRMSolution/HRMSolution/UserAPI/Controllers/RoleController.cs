@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
 using User.ApplicationCore.Models;
 
@@ -9,10 +10,11 @@ namespace UserAPI.Controllers;
 public class RoleController : ControllerBase
 {
     private readonly IRoleService _roleService;
-
-    public RoleController(IRoleService roleService)
+    private readonly IAuthenticationRepository _authenticationRepository;
+    public RoleController(IRoleService roleService, IAuthenticationRepository authenticationRepository)
     {
         _roleService = roleService;
+        _authenticationRepository = authenticationRepository;
     }
     // GET
     [HttpGet("GetAll")]
@@ -42,5 +44,13 @@ public class RoleController : ControllerBase
     public async Task<IActionResult> DeleteRoleById(int id)
     {
         return Ok(await _roleService.DeleteRoleByIdAsync(id));
+    }
+
+    [HttpPost("SignUp")]
+    public async Task<IActionResult> SignUp(SignUpModel model)
+    {
+        var res = await _authenticationRepository.SignUpAsync(model);
+        if (res.Succeeded) return Ok("your account have been created");
+        return BadRequest();
     }
 }

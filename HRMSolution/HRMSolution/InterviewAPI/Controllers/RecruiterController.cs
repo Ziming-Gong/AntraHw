@@ -18,14 +18,14 @@ public class RecruiterController : Controller
     [Route("GetAllRecruiter")]
     public async Task<IActionResult> GetAll()
     {
-        return Ok(await _recruiterService.GetAll());
+        return Ok(await _recruiterService.GetAllAsync());
     }
 
     [HttpPost]
     [Route("AddRecruiter")]
     public async Task<IActionResult> CreateRecruiter(RecruiterRequestModel model)
     {
-        return Ok(await _recruiterService.AddRecruiter(model));
+        return Ok(await _recruiterService.InsertAsync(model));
     }
 
     [HttpGet]

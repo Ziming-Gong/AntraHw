@@ -92,3 +92,8 @@
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/JWTAuthenticationsManager.dll
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/JWTAuthenticationsManager.pdb
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll

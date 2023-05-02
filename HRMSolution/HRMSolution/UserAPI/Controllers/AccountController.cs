@@ -1,6 +1,7 @@
 using JWTAuthenticationsManager;
 using JWTAuthenticationsManager.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
@@ -15,11 +16,15 @@ public class AccountController : ControllerBase
 {
     private readonly IAccountService _accountService;
     private readonly JWTTokenHandler _jwtTokenHandler;
+    private readonly IAuthenticationRepository _authenticationRepository;
 
-    public AccountController(IAccountService service, JWTTokenHandler jwtTokenHandler)
+    // IdentityUser 
+
+    public AccountController(IAccountService service, JWTTokenHandler jwtTokenHandler, IAuthenticationRepository authenticationRepository)
     {
         _accountService = service;
         _jwtTokenHandler = jwtTokenHandler;
+        _authenticationRepository = authenticationRepository;
     }
 
     [HttpGet("GetAll")]
@@ -53,11 +58,30 @@ public class AccountController : ControllerBase
     }
 
     [HttpPost("CreateToken")]
-    public async Task<IActionResult> Login(AuthenticationRequest request)
+    public async Task<IActionResult> Login(LoginModel model)
     {
-        var response = _jwtTokenHandler.GenerateToken(request);
-        if (response == null) return Unauthorized();
-        return Ok();    
+        var result = await _authenticationRepository.LogInAsync(model);
+        if (result.Succeeded)
+        {
+            AuthenticationRequest request = new AuthenticationRequest()
+            {
+                Password = model.Password,
+                Username = model.Email
+            };
+            var response = _jwtTokenHandler.GenerateToken(request, "admin");
+            if (response == null) return Unauthorized();
+            return Ok();  
+        }
+
+        return BadRequest();
+
+    }
+    [HttpPost("SignUp")]
+    public async Task<IActionResult> SignUp(SignUpModel model)
+    {
+        var res = await _authenticationRepository.SignUpAsync(model);
+        if (res.Succeeded) return Ok("your account have been created");
+        return BadRequest();
     }
 
 

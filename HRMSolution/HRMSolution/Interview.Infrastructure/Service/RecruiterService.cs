@@ -15,6 +15,21 @@ public class RecruiterService : IRecruiterService
         _recruiterRepository = recruiterRepository;
     }
 
+    public Task<int> InsertAsync(RecruiterRequestModel model)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> DeleteByIdAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> UpdateAsync(RecruiterRequestModel model)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<RecruiterResponseModel> GetByIdAsync(int id)
     {
         var res = await _recruiterRepository.GetByIdAsync(id);
@@ -29,6 +44,11 @@ public class RecruiterService : IRecruiterService
         }
         
         
+    }
+
+    public Task<IEnumerable<RecruiterResponseModel>> GetAllAsync()
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<int> AddRecruiter(RecruiterRequestModel model)

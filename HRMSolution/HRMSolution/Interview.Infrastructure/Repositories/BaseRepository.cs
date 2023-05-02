@@ -14,7 +14,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     public async Task<T> GetByIdAsync(int id)
     {
         return await _context.Set<T>().FindAsync(id);
-        // return response;
+        // return response;a
     }
 
     public async Task<int> InsertAsync(T entity)
@@ -27,5 +27,15 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         var response = await _context.Set<T>().ToListAsync();
         return response;
+    }
+
+    public Task<int> UpdateAsync(T entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> DeleteById(int id)
+    {
+        throw new NotImplementedException();
     }
 }
