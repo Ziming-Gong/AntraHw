@@ -18,14 +18,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RecruitingDbContext>(options =>
 {
-    // if (connectionString.Length > 1)
-    // {
-        // options.UseSqlServer(connectionString);
-    // }
-    // else
-    // {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RecruitingAPIDb"));
-    // }
+    if (connectionString.Length > 1)
+    {
+        options.UseSqlServer(connectionString);
+    }
+    else
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("RecruitingAPIDb"));
+    }
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
     
 });
