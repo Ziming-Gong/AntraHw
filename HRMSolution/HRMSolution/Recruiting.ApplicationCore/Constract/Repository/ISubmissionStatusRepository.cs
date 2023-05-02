@@ -4,5 +4,5 @@ namespace Recruiting.ApplicationCore.Constract.Repository;
 
 public interface ISubmissionStatusRepository : IRepositoryAsync<SubmissionStatus>
 {
-    Task<IEnumerable<SubmissionStatus>> GetStatusByStatus(string status);
+    // Task<IEnumerable<SubmissionStatus>> GetStatusByStatus(string status);
 }

@@ -20,11 +20,15 @@ public class SubmissionService : ISubmissionService
     {
         var candidate= await _candidateRepository.FirstOrDefaultWithIncludesAsync(x => x.Id == model.CandidateId,
             x => x.Submissions);
-        var exist = candidate.Submissions.FirstOrDefault(e => e.JobRequirementId == model.JobRequirementId);
-        if (exist == null)
+        if (candidate != null)
         {
-            throw new Exception("This Submission already exist!");
+            var exist = candidate.Submissions.FirstOrDefault(e => e.JobRequirementId == model.JobRequirementId);
+            if (exist == null)
+            {
+                throw new Exception("This Submission already exist!");
+            } 
         }
+        
 
         if (model != null)
         {
