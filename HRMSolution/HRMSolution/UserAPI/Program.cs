@@ -21,14 +21,14 @@ builder.Services.AddCustomJwtTokenService(); // Custom Token
 //DB context
 builder.Services.AddDbContext<UserDbContext>(options =>
 {
-    // if (connectionString.Length > 1)
-    // {
-    //     options.UseSqlServer(connectionString);
-    // }
-    // else
-    // { 
+    if (connectionString != null && connectionString.Length > 1)
+    {
+        options.UseSqlServer(connectionString);
+    }
+    else
+    { 
         options.UseSqlServer(builder.Configuration.GetConnectionString("UserAPIDb"));
-    // }
+    }
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 

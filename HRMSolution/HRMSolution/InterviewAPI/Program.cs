@@ -6,7 +6,7 @@ using Interview.Infrastructure.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = Environment.GetEnvironmentVariable("InterviewAPIDb");
 // Add services to the container.
 // user logger to should query
 // var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
@@ -21,7 +21,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<InterviewDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("InterviewAPIDb"));
+    if (connectionString != null && connectionString.Length > 1)
+    {
+        options.UseSqlServer(connectionString);
+    }
+    else
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("InterviewAPIDb"));
+    }
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 

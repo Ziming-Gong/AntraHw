@@ -2,7 +2,7 @@
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-ENV RecruitingAPIDb = "Server=localhost;Database=RecruitingAPIDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
+ENV RecruitingAPIDb="Server=192.168.0.246,1433;Database=RecruitingAPIDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
 
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build

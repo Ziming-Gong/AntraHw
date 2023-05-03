@@ -9,19 +9,27 @@ using Onboarding.Infrastructure.Repositories;
 using Onboarding.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = Environment.GetEnvironmentVariable("OnboardingDb");
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+Console.WriteLine("this is connect string1 :" + connectionString);
 //Database
 builder.Services.AddDbContext<OnboardingDbContext>(options =>
 {
+    Console.WriteLine("this is connect string: " + connectionString);
+    if (connectionString != null && connectionString.Length > 1)
+    {
+        options.UseSqlServer(connectionString);
+    }
+    else
+    { 
+        options.UseSqlServer(builder.Configuration.GetConnectionString("OnboardingDb"));
+    }
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-    options.UseSqlServer(builder.Configuration.GetConnectionString("OnboardingDb"));
 });
 
 // Repository Injection

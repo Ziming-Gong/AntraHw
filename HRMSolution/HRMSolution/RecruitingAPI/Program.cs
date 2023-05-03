@@ -18,7 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RecruitingDbContext>(options =>
 {
-    if (connectionString.Length > 1)
+    if (connectionString != null && connectionString.Length > 1)
     {
         options.UseSqlServer(connectionString);
     }
