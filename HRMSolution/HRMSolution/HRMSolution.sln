@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recruiting.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recruiting.ApplicationCore", "Recruiting.ApplicationCore\Recruiting.ApplicationCore.csproj", "{39A97215-6E1C-448E-8858-62DA6F848AAC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InterView", "InterView", "{A0DED311-42D5-4C28-9928-49DF8076E549}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interview", "Interview", "{A0DED311-42D5-4C28-9928-49DF8076E549}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewAPI", "InterviewAPI\InterviewAPI.csproj", "{9927B57F-CAD9-4AB4-B2B8-8C6ED879DD4E}"
 EndProject

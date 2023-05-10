@@ -1,0 +1,2 @@
+ENV RecruitingAPIDb=" Server=192.168.0.246,1433;Database=RecruitingAPIDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
+ENV AuthenticationDb="Server=192.168.0.246,1433;Database=UserAPIDb      ;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"

@@ -1,9 +1,6 @@
 using JWTAuthenticationsManager;
 using JWTAuthenticationsManager.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using User.ApplicationCore.Constract.Repositories;
 using User.ApplicationCore.Constract.Services;
 using User.ApplicationCore.Models;
 
@@ -11,79 +8,46 @@ namespace UserAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-// [Authorize]
-public class AccountController : ControllerBase
+public class AccountController : Controller
 {
-    private readonly IAccountService _accountService;
-    private readonly JWTTokenHandler _jwtTokenHandler;
-    private readonly IAuthenticationRepository _authenticationRepository;
+    private readonly JWTTokenHandler jwtTokenHandler;
+    private readonly IAuthenticationService service;
 
-    // IdentityUser 
-
-    public AccountController(IAccountService service, JWTTokenHandler jwtTokenHandler, IAuthenticationRepository authenticationRepository)
+    public AccountController(JWTTokenHandler jwtTokenHandler, IAuthenticationService service)
     {
-        _accountService = service;
-        _jwtTokenHandler = jwtTokenHandler;
-        _authenticationRepository = authenticationRepository;
+        this.jwtTokenHandler = jwtTokenHandler;
+        this.service = service;
     }
-
-    [HttpGet("GetAll")]
-    public async Task<ActionResult> GetAll()
+    [HttpPost("SignIn")]
+    public async Task<IActionResult> SignIn(SignInModel model)
     {
-        return Ok(await _accountService.GetAllAccountAsync());
-    }
-
-    [HttpGet("getbyid")]
-    public async Task<IActionResult> GetById(int id)
-    {
-        return Ok(await _accountService.GetAccountByIdAsync(id));
-    }
-
-    [HttpDelete("DeleteAccount/{id}")]
-    public async Task<IActionResult> DeleteById(int id)
-    {
-        return Ok(await _accountService.DeleteAccountByIdAsync(id));
-    }
-
-    [HttpPost("CreateAccount")]
-    public async Task<IActionResult> CreateAccount(AccountRequestModel model)
-    {
-        return Ok(await _accountService.CreateAccountAsync(model));
-    }
-
-    [HttpPut("UpdateAccount")]
-    public async Task<IActionResult> UpdateAccount(AccountRequestModel model)
-    {
-        return Ok(await _accountService.UpdateAccount(model));
-    }
-
-    [HttpPost("CreateToken")]
-    public async Task<IActionResult> Login(LoginModel model)
-    {
-        var result = await _authenticationRepository.LogInAsync(model);
+        var result = await service.SignInAsync(model);
         if (result.Succeeded)
         {
             AuthenticationRequest request = new AuthenticationRequest()
             {
-                Password = model.Password,
-                Username = model.Email
+                Username = model.Username,
+                Password = model.Password
             };
-            var response = _jwtTokenHandler.GenerateToken(request, "admin");
-            if (response == null) return Unauthorized();
-            return Ok();  
+            var response = jwtTokenHandler.GenerateToken(request, "admin");
+            if (response == null)
+            {
+                return Unauthorized();
+            }
+            return Ok(response);
         }
-
-        return BadRequest();
-
+        return Unauthorized();
     }
+
     [HttpPost("SignUp")]
     public async Task<IActionResult> SignUp(SignUpModel model)
     {
-        var res = await _authenticationRepository.SignUpAsync(model);
-        if (res.Succeeded) return Ok("your account have been created");
+        var result = await service.SignUpAsync(model);
+        if (result.Succeeded)
+        {
+            return Ok("created successfully");
+        }
         return BadRequest();
     }
-
-
 
 }

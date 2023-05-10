@@ -1,0 +1,7 @@
+
+
+
+attribute directives
+    ngStyle, ngClass
+
+    localhost:4200/product/edit

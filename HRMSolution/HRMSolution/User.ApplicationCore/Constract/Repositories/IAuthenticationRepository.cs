@@ -5,6 +5,7 @@ namespace User.ApplicationCore.Constract.Repositories;
 
 public interface IAuthenticationRepository
 {
-    Task<IdentityResult> SignUpAsync(SignUpModel model);
-    Task<SignInResult> LogInAsync(LoginModel model);
+    Task<IdentityResult> CreateAsync(ApplicationUser user, string password);
+    Task<IdentityResult> CreateAsync(ApplicationUser user, string password, string role);
+    Task<SignInResult> SignInAsync(string username, string password);
 }

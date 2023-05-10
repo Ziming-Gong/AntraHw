@@ -1,0 +1,14 @@
+<p>about-us works!</p>
+<table>
+    <tr *ngFor="let p of products">
+        <td>
+            {{ p.id | uppercase}}
+        </td>
+        <td>
+            {{p.name | currency:'EUR'}}
+        </td>
+        <td>
+            <a [routerLink]="['/product/edit/',p.id,p.name]">edit</a>
+        </td>
+    </tr>
+</table>

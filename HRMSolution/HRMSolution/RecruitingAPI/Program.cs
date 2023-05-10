@@ -1,9 +1,11 @@
+using JWTAuthenticationsManager;
 using Microsoft.EntityFrameworkCore;
 using Recruiting.ApplicationCore.Constract.Repository;
 using Recruiting.ApplicationCore.Constract.Service;
 using Recruiting.Infrastructure.Data;
 using Recruiting.Infrastructure.Repository;
 using Recruiting.Infrastructure.Service;
+using RecruitingAPI.Filters;
 using RecruitingAPI.Midderware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//jwt token
+builder.Services.AddCustomJwtTokenService();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
+
 builder.Services.AddDbContext<RecruitingDbContext>(options =>
 {
     if (connectionString != null && connectionString.Length > 1)
@@ -41,6 +55,14 @@ builder.Services.AddScoped<ISubmissionStatusService, SubmissionStatusService>();
 
 var app = builder.Build();
 
+// Add filter
+// builder.Services.AddMvc(options =>
+// {
+//     options.Filters.Add(new CustomFilter());
+// });
+
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -48,10 +70,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseCors();
+
 app.MapControllers();
+
 
 app.Run();

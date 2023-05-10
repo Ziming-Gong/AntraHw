@@ -7,33 +7,31 @@ namespace User.Infrastructure.Repositories;
 
 public class AuthenticationRepository : IAuthenticationRepository
 {
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
-
+    private readonly UserManager<ApplicationUser> userManager;
+    private readonly SignInManager<ApplicationUser> signInManager;
     public AuthenticationRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
     {
-        _userManager = userManager;
-        _signInManager = signInManager;
+        this.userManager = userManager;
+        this.signInManager = signInManager;
     }
 
-    public async Task<IdentityResult> SignUpAsync(SignUpModel model)
+    public async Task<IdentityResult> CreateAsync(ApplicationUser user, string password)
     {
-        ApplicationUser applicationUser = new ApplicationUser()
+        return await userManager.CreateAsync(user, password);
+    }
+
+    public async Task<IdentityResult> CreateAsync(ApplicationUser user, string password, string role)
+    {
+        var result = await CreateAsync(user, password);
+        if (result != null && result.Succeeded)
         {
-            FirstName = model.FirstName,
-            LastName = model.LastName,
-            Email = model.Email,
-            UserName = model.Email,
-            
-        };
-        return await _userManager.CreateAsync(applicationUser, model.Password);
+            return await userManager.AddToRoleAsync(user, role);
+        }
+        return result;
     }
 
-    public async Task<SignInResult> LogInAsync(LoginModel model)
+    public async Task<SignInResult> SignInAsync(string username, string password)
     {
-        var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
-        return result;
-        
-
+        return await signInManager.PasswordSignInAsync(username, password, false, false);
     }
 }

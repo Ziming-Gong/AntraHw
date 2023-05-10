@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiverNotificationApp", "ReceiverNotificationApp\ReceiverNotificationApp.csproj", "{9E77395A-372A-4C0C-B6EA-44C3F00DAE06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedApp", "SharedApp\SharedApp.csproj", "{9F750B66-F6CE-4801-BFDE-59B017F4F341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenderAPI", "SenderAPI\SenderAPI.csproj", "{F64E260F-191D-4A33-9526-22BA1BF532D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E77395A-372A-4C0C-B6EA-44C3F00DAE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E77395A-372A-4C0C-B6EA-44C3F00DAE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E77395A-372A-4C0C-B6EA-44C3F00DAE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E77395A-372A-4C0C-B6EA-44C3F00DAE06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F750B66-F6CE-4801-BFDE-59B017F4F341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F750B66-F6CE-4801-BFDE-59B017F4F341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F750B66-F6CE-4801-BFDE-59B017F4F341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F750B66-F6CE-4801-BFDE-59B017F4F341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F64E260F-191D-4A33-9526-22BA1BF532D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64E260F-191D-4A33-9526-22BA1BF532D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64E260F-191D-4A33-9526-22BA1BF532D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64E260F-191D-4A33-9526-22BA1BF532D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

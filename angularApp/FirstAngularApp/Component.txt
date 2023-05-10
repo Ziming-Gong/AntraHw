@@ -1,0 +1,14 @@
+
+
+Angular supports two way bindings
+    1. way binding concepts
+        1.1 passing data from component to template
+            1.1.1
+
+
+    2. way binding concept
+        [(ngModel)]  
+        to use ngModel we need to import 
+
+
+        

@@ -39,7 +39,7 @@ public class JWTTokenHandler
         //     return null;
         // }
         // generate Token
-        var tokenExpiryTime = DateTime.Now.AddMinutes(JWT_Token_Validity_Min); // from now to 20 mins
+        var tokenExpiryTime = DateTime.UtcNow.AddMinutes(JWT_Token_Validity_Min); // from now to 20 mins
         var tokenKey = Encoding.ASCII.GetBytes(JWT_Secret_key);
         var claimsIdentity = new ClaimsIdentity(new List<Claim>
         {

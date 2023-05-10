@@ -1,30 +1,16 @@
-﻿version: '3.4'
-services:
-  recruiting-api:
-    image: ${DOCKER_REGISTRY-}recruitingapi
-    build:
-      context: .
-      dockerfile: RecruitingAPI/Dockerfile
-    ports:
-      - "40120:80"
-  Authentication-api:
-    image: ${DOCKER_REGISTRY-}authenticationapi
+﻿services:
+  userapi:
+    image: userapi
     build:
       context: .
       dockerfile: UserAPI/Dockerfile
     ports:
       - "40121:80"
-  onboarding-api:
-    image: ${DOCKER_REGISTRY-}onboardingapi
+  
+  recruitingapi:
+    image: recruitingapi
     build:
       context: .
-      dockerfile: OnboardingAPI/Dockerfile
+      dockerfile: RecruitingAPI/Dockerfile
     ports:
       - "40122:80"
-  interview-api:
-    image: ${DOCKER_REGISTRY-}interviewapi
-    build:
-      context: .
-      dockerfile: InterviewAPI/Dockerfile
-    ports:
-      - "40123:80"

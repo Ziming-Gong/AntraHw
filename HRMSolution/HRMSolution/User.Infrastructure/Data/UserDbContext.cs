@@ -9,7 +9,7 @@ namespace User.Infrastructure.Data;
 
 public class UserDbContext : IdentityDbContext<ApplicationUser>
 {
-    public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+    public UserDbContext(DbContextOptions options) : base(options)
     {
     }
     // public DbSet<Role> Roles { get; set; }
@@ -19,7 +19,7 @@ public class UserDbContext : IdentityDbContext<ApplicationUser>
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // modelBuilder.Entity<UserRole>(ConfigureUserRole);
+       base.OnModelCreating(modelBuilder);
     }
 
     // private void ConfigureUserRole(EntityTypeBuilder<UserRole> builder)

@@ -4,11 +4,13 @@ EXPOSE 80
 EXPOSE 443
 ENV AuthenticationDb="Server=192.168.0.246,1433;Database=UserAPIDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
 
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["UserAPI/UserAPI.csproj", "UserAPI/"]
 COPY ["User.Infrastructure/User.Infrastructure.csproj", "User.Infrastructure/"]
 COPY ["User.ApplicationCore/User.ApplicationCore.csproj", "User.ApplicationCore/"]
+COPY ["JWTAuthenticationsManager/JWTAuthenticationsManager.csproj", "JWTAuthenticationsManager/"]
 RUN dotnet restore "UserAPI/UserAPI.csproj"
 COPY . .
 WORKDIR "/src/UserAPI"

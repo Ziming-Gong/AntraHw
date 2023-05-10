@@ -1,0 +1,39 @@
+Component 
+
+    use angular cli using teminal
+    ng g c <Component-name>
+
+    html-template, Component.ts file (logic), css file for the component, test file for teh component
+
+    --Component.ts 
+        decorator   @component   this is class is mark as component
+                    -- Selector = access the component html file
+                    -- templateUrl = "Url for the component url"
+                    -- styleUrls = [] it can take urls for multiple css file
+                    -- Provider = [] to inject the services (Like dependency injection)
+
+
+                     @ngModule
+
+
+                     handle the logic:
+                     it will pass the data to the template
+                     it will handle the events occurred in the template 
+                     it will receive data from the template 
+
+                     Angular supports two way bindings:
+                        1 way binding concepts
+                            1.1 passing data from component to template
+                                1.1.1 use interpolation {{}}
+                                1.1.2 use property binding []  
+                                    mainly for some case that do not have closed tag. eg. <input>
+                        
+
+                            1.2 pass data from event 
+                        2 way binding concepts
+                            [(ngModule)]   [()] --- AKA "banana in a box"
+                            to use ngModule we need to import FormsModule in the app.module.ts file
+
+
+
+

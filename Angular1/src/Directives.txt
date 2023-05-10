@@ -1,0 +1,14 @@
+3 types of directives are there in angular
+Component directives
+
+structural directives
+    *ngFor, *ngIf, *ngSwitch
+    structural directives are used to create/show/hide the html elements.
+    
+
+
+
+Attribute directives
+    ngStyle, ngClass
+
+    localhost:4200/product/edit/1

@@ -604,3 +604,7 @@
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/obj/Debug/net6.0/RecruitingAPI.pdb
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/obj/Debug/net6.0/RecruitingAPI.genruntimeconfig.cache
 /Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/obj/Debug/net6.0/ref/RecruitingAPI.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/bin/Debug/net6.0/JWTAuthenticationsManager.dll
+/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/bin/Debug/net6.0/JWTAuthenticationsManager.pdb

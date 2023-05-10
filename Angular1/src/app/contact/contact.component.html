@@ -1,0 +1,39 @@
+<div *ngIf="showContent">
+    <h1>Contact Us</h1>
+    <p>sjfkljaklfjsklfjaklfjalkjfklasjfkljfkaljfkladsjfakljflkjfdklajflkajflkdajf</p>
+</div>
+
+
+<div *ngIf="showContent; else showOdd">
+    <h1>This number is even</h1>
+</div>
+<ng-template #showOdd>
+    <div>
+        <h1>This number is odd</h1>
+    </div>
+</ng-template>
+
+<input type="button" value="click me" (click)="logMessageOnConsole()" />
+
+<hr/>
+<input type="button" value="toggle" (click)="toggleParagraph()"/>
+<div *ngIf="toggle">
+    This is toggle 
+</div>
+
+
+<ul>
+    <li *ngFor="let c of countries">{{c}}</li>
+</ul>
+
+<select name="" id="">
+    <option *ngFor="let c of countries">{{c}}</option>
+</select>
+
+
+<table border="1" [cellPadding]="2" [cellSpacing]="2">
+    <tr *ngFor="let c of customer; index as i; even as e; odd as o; first as f">
+        <td>{{c.id}}</td> <td>{{c.name}}</td> <td>{{c.age}}</td> <td>{{c.city}}</td>
+        <td>{{i}}</td> <td>{{e}}</td> <td>{{o}}</td> <td>{{f}}</td>
+    </tr>
+</table>

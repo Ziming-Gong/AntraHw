@@ -1,4 +1,4 @@
-using JWTAuthenticationsManager;
+    using JWTAuthenticationsManager;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using User.ApplicationCore.Constract.Repositories;
@@ -9,7 +9,7 @@ using User.Infrastructure.Repositories;
 using User.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = Environment.GetEnvironmentVariable("AuthenticationDb");
+var connectionString = Environment.GetEnvironmentVariable("UserAPIDb");
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -17,7 +17,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCustomJwtTokenService(); // Custom Token
-
+builder.Services.AddCors(option =>
+{
+    option.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+    });
+});
 //DB context
 builder.Services.AddDbContext<UserDbContext>(options =>
 {
@@ -33,19 +39,16 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 });
 
 // Repo Injection
-builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 // Server Injection
-builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IRoleService, RoleService>();
-builder.Services.AddScoped<IUserRoleService, UserRoleService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 // Token
-builder.Services.AddSingleton<JWTTokenHandler, JWTTokenHandler>();
+builder.Services.AddSingleton<JWTTokenHandler>();
 // Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>().AddDefaultTokenProviders();
+
+builder.Services.AddLogging();
 
 var app = builder.Build();
 
@@ -56,11 +59,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthentication();
-
-app.UseHttpsRedirection();
+app.UseRouting();
+app.UseCors();
 
 app.UseAuthorization();
+
 
 app.MapControllers();
 

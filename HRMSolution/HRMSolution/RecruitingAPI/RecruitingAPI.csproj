@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\JWTAuthenticationsManager\JWTAuthenticationsManager.csproj" />
       <ProjectReference Include="..\Recruiting.Infrastructure\Recruiting.Infrastructure.csproj" />
     </ItemGroup>
 
@@ -27,10 +28,6 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Filters\" />
     </ItemGroup>
 
 </Project>

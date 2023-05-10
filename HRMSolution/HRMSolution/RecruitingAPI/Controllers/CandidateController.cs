@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Recruiting.ApplicationCore.Constract.Service;
 using Recruiting.ApplicationCore.Entity;
@@ -8,6 +9,7 @@ namespace RecruitingAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+// [Authorize]
 public class CandidateController : Controller
 {
     private readonly ICandidateServiceAsync _candidateService;

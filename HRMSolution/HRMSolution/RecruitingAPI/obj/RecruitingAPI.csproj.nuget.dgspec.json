@@ -4,6 +4,73 @@
     "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI/RecruitingAPI.csproj": {}
   },
   "projects": {
+    "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/JWTAuthenticationsManager/JWTAuthenticationsManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/JWTAuthenticationsManager/JWTAuthenticationsManager.csproj",
+        "projectName": "JWTAuthenticationsManager",
+        "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/JWTAuthenticationsManager/JWTAuthenticationsManager.csproj",
+        "packagesPath": "/Users/ming/.nuget/packages/",
+        "outputPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/JWTAuthenticationsManager/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ming/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.30.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.30.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.ApplicationCore/Recruiting.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -168,6 +235,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/JWTAuthenticationsManager/JWTAuthenticationsManager.csproj": {
+                "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/JWTAuthenticationsManager/JWTAuthenticationsManager.csproj"
+              },
               "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.Infrastructure/Recruiting.Infrastructure.csproj": {
                 "projectPath": "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/Recruiting.Infrastructure/Recruiting.Infrastructure.csproj"
               }

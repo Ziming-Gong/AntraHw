@@ -1,0 +1,44 @@
+<!-- <p>contact-us works!</p>
+<div div *ngIf="showContent">
+    <h1>This is contact us page</h1>
+    <p>
+
+    </p>
+</div>
+
+<div *ngIf="showContent; else showOdd">
+<h1>
+    this number is even
+</h1>
+<ng-template #showOdd>
+<div>
+    this number is odd
+</div>
+</ng-template> -->
+
+
+<input type="button" value="click me" (click) ="logMessageOnConsole()"/>
+
+<div *ngIf="toggle">
+Lerem 
+</div>
+
+<ul>
+    <li *ngFor="let c of countries">{{c}}</li>
+</ul>
+
+<select>
+    <option *ngFor="let c of countries">{{c}}</option>
+</select>
+
+<table border="1" cellPadding="2" cellspacing="2">
+    <tr *ngFor="let c of customers; index as i; even as e; odd as o; first as f">
+        <td>{{c.id}}</td>,<td>{{c.name}}</td>,<td>{{c.city}}</td>
+        
+    </tr>
+</table>
+
+
+
+
+

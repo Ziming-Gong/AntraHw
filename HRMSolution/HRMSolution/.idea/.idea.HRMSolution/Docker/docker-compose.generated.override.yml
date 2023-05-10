@@ -1,55 +1,6 @@
 # This is a generated file. Not intended for manual editing.
-version: "3.4"
 services:
-  Authentication-api:
-    build:
-      context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
-      dockerfile: "UserAPI/Dockerfile"
-      target: "base"
-    command: []
-    entrypoint:
-    - "dotnet"
-    - "/app/bin/Debug/net6.0/UserAPI.dll"
-    environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-    image: "authenticationapi:dev"
-    ports: []
-    volumes:
-    - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI:/app:rw"
-    working_dir: "/app"
-  interview-api:
-    build:
-      context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
-      dockerfile: "InterviewAPI/Dockerfile"
-      target: "base"
-    command: []
-    entrypoint:
-    - "dotnet"
-    - "/app/bin/Debug/net6.0/InterviewAPI.dll"
-    environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-    image: "interviewapi:dev"
-    ports: []
-    volumes:
-    - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/InterviewAPI:/app:rw"
-    working_dir: "/app"
-  onboarding-api:
-    build:
-      context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
-      dockerfile: "OnboardingAPI/Dockerfile"
-      target: "base"
-    command: []
-    entrypoint:
-    - "dotnet"
-    - "/app/bin/Debug/net6.0/OnboardingAPI.dll"
-    environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-    image: "onboardingapi:dev"
-    ports: []
-    volumes:
-    - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/OnboardingAPI:/app:rw"
-    working_dir: "/app"
-  recruiting-api:
+  recruitingapi:
     build:
       context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
       dockerfile: "RecruitingAPI/Dockerfile"
@@ -64,4 +15,20 @@ services:
     ports: []
     volumes:
     - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/RecruitingAPI:/app:rw"
+    working_dir: "/app"
+  userapi:
+    build:
+      context: "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution"
+      dockerfile: "UserAPI/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net6.0/UserAPI.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+    image: "userapi:dev"
+    ports: []
+    volumes:
+    - "/Users/ming/Desktop/AntraHw/HRMSolution/HRMSolution/UserAPI:/app:rw"
     working_dir: "/app"
