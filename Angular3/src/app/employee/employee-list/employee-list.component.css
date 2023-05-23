@@ -1,0 +1,45 @@
+/* 设置表格的背景颜色、字体和边框 */
+table {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 2px solid #444;
+  }
+  
+  /* 设置表格行的背景颜色和鼠标悬停时的样式 */
+  tr {
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* 设置表格单元格的边框和填充 */
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* 设置删除按钮的颜色、边框和字体 */
+  button.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* 设置删除按钮的鼠标悬停时的样式 */
+  button.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  

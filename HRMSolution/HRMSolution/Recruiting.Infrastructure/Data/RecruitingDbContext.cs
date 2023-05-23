@@ -23,6 +23,17 @@ namespace Recruiting.Infrastructure.Data
             modelBuilder.Entity<Submission>(ConfigureSubmission);
             modelBuilder.Entity<EmployeeRequirementType>(ConfigureEmployeeRequireType);
             modelBuilder.Entity<SubmissionStatus>(ConfigureSubmission);
+            modelBuilder.Entity<Candidate>(ConfigureCandidate);
+        }
+
+        private void ConfigureJobRequirement(EntityTypeBuilder<JobRequirement> builder)
+        {
+            
+        }
+
+        private void ConfigureCandidate(EntityTypeBuilder<Candidate> builder)
+        {
+            builder.ToTable("Candidate").HasIndex(u => u.Email).IsUnique();
         }
 
         private void ConfigureSubmission(EntityTypeBuilder<Submission> builder)

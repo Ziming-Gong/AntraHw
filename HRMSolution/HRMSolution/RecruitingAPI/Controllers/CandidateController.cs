@@ -9,7 +9,7 @@ namespace RecruitingAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-// [Authorize]
+[Authorize]
 public class CandidateController : Controller
 {
     private readonly ICandidateServiceAsync _candidateService;

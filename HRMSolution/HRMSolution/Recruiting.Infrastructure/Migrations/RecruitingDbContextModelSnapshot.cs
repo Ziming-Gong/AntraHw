@@ -48,7 +48,10 @@ namespace Recruiting.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candidates");
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Candidate", (string)null);
                 });
 
             modelBuilder.Entity("Recruiting.ApplicationCore.Entity.EmployeeRequirementType", b =>

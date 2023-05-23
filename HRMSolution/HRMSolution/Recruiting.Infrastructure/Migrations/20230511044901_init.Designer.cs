@@ -12,8 +12,8 @@ using Recruiting.Infrastructure.Data;
 namespace Recruiting.Infrastructure.Migrations
 {
     [DbContext(typeof(RecruitingDbContext))]
-    [Migration("20230425082702_update2")]
-    partial class update2
+    [Migration("20230511044901_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,7 +50,10 @@ namespace Recruiting.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candidates");
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Candidate", (string)null);
                 });
 
             modelBuilder.Entity("Recruiting.ApplicationCore.Entity.EmployeeRequirementType", b =>

@@ -25,20 +25,6 @@ public class JWTTokenHandler
     // 
     public AuthenticationResponse GenerateToken(AuthenticationRequest authenticationRequest, string role)
     {
-        // if (string.IsNullOrEmpty(authenticationRequest.Username) ||
-        //     string.IsNullOrEmpty(authenticationRequest.Password))
-        // {
-        //     return null;
-        // }
-        //
-        // var result = _userAccounts
-        //     .Where(x => x.Username == authenticationRequest.Username && x.Password == authenticationRequest.Password)
-        //     .FirstOrDefault();
-        // if (result == null)
-        // {
-        //     return null;
-        // }
-        // generate Token
         var tokenExpiryTime = DateTime.UtcNow.AddMinutes(JWT_Token_Validity_Min); // from now to 20 mins
         var tokenKey = Encoding.ASCII.GetBytes(JWT_Secret_key);
         var claimsIdentity = new ClaimsIdentity(new List<Claim>
@@ -59,6 +45,7 @@ public class JWTTokenHandler
         var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
         var securityToken = jwtSecurityTokenHandler.CreateToken(securityTokenDescriptor);
         var token = jwtSecurityTokenHandler.WriteToken(securityToken);
+        
         return new AuthenticationResponse
         {
             Token = token,

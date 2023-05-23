@@ -4,6 +4,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeService } from '../shared/services/employee.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,7 +16,9 @@ import { EmployeeService } from '../shared/services/employee.service';
   ],
   imports: [
     CommonModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers:[EmployeeService]
 })

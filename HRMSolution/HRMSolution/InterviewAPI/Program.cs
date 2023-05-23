@@ -31,7 +31,7 @@ builder.Services.AddDbContext<InterviewDbContext>(options =>
     }
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
-
+builder.Services.AddSingleton(new InterviewDbConnect(connectionString));
 // Repo injection
 builder.Services.AddScoped<IRecruiterRepository, RecruiterRepository>();
 builder.Services.AddScoped<IInterviewRepository, InterviewRepository>();
@@ -56,7 +56,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();

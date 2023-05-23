@@ -47,11 +47,13 @@ builder.Services.AddDbContext<RecruitingDbContext>(options =>
 builder.Services.AddScoped<ICandidateRepositoryAsync, CandidateRepositoryAsync>();
 builder.Services.AddScoped<ISubmissionRepository, SubmissionRepository>();
 builder.Services.AddScoped<ISubmissionStatusRepository, StatusRepository>();
+builder.Services.AddScoped<IJobRequirementRepository, JobRequirementRepository>();
 
 //Service Injection
 builder.Services.AddScoped<ICandidateServiceAsync, CandidateServiceAsync>();
 builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 builder.Services.AddScoped<ISubmissionStatusService, SubmissionStatusService>();
+builder.Services.AddScoped<IJobRequirementService, JobRequirementsService>();
 
 var app = builder.Build();
 

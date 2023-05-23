@@ -8,7 +8,9 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HRMSolution" expanded="True">
-            <Node name="Authentication" selected="True" />
+            <Node name="Authentication" expanded="True">
+              <Node name="UserAPI" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

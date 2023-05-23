@@ -1,1 +1,28 @@
-<p>employee-add works!</p>
+
+<form #createForm="ngForm" (submit)="create(createForm)">
+    <div class="container">
+        <span>FirstName: </span>
+        <div>
+            <input type="text" name="firstName" [(ngModel)]="candidateModel.firstName" class="form-control" />
+        </div>
+        
+        <span>{{candidateModel.firstName}}</span>
+        <br>
+        <span>LastName: </span>
+        <input type="text" name="lastName" class="form-control" [(ngModel)]="candidateModel.lastName"/>
+        <p>{{candidateModel.lastName}}</p>
+
+        <br>
+        <span>Email: </span>
+        <input type="text" name="email" class="form-control" [(ngModel)]="candidateModel.email"/>
+        <p>{{candidateModel.email}}</p>
+
+        <br>
+        <span>ResumeURL: </span>
+        <input type="text" name="resumeURL" class="form-control" [(ngModel)]="candidateModel.resumeURL" />
+        <p>{{candidateModel.resumeURL}}</p>
+
+        <br>
+        <button >submit</button>
+    </div>
+</form>

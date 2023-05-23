@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConvert", "JsonConvert\JsonConvert.csproj", "{D9468B85-38DB-41BE-B258-F1A129F2D8A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{D7293552-A5F4-43A8-96FE-49E6B14BF62C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{FF108B1E-4036-4051-A5D8-2D2365DB3C29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9468B85-38DB-41BE-B258-F1A129F2D8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9468B85-38DB-41BE-B258-F1A129F2D8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9468B85-38DB-41BE-B258-F1A129F2D8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9468B85-38DB-41BE-B258-F1A129F2D8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7293552-A5F4-43A8-96FE-49E6B14BF62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7293552-A5F4-43A8-96FE-49E6B14BF62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7293552-A5F4-43A8-96FE-49E6B14BF62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7293552-A5F4-43A8-96FE-49E6B14BF62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF108B1E-4036-4051-A5D8-2D2365DB3C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF108B1E-4036-4051-A5D8-2D2365DB3C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF108B1E-4036-4051-A5D8-2D2365DB3C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF108B1E-4036-4051-A5D8-2D2365DB3C29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

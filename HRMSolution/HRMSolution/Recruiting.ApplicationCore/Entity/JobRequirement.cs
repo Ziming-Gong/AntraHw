@@ -5,6 +5,7 @@ namespace Recruiting.ApplicationCore.Entity;
 
 public class JobRequirement
 {
+    [Key]
     public int JobRequirementId { get; set; } // PK
     public int NumberOfPositions { get; set; } 
     [Required]

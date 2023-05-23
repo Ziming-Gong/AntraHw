@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5s9L+vFk81tWQ5N43wtqB4gTBV86Wm0yvO/LUpNjKoLbtuCPx0QAg1e5waQ1vtfJY4oq/uR/1EMzS9jhht1B1A==",
+  "success": true,
+  "projectFilePath": "/Users/ming/Desktop/AntraHw/JsonConvert/Infrastructure/Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/Users/ming/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

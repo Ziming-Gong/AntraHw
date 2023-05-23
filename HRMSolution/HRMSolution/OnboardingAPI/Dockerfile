@@ -2,8 +2,7 @@
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-ENV OnboardingDb="Server=localhost; Database=AuthenticationsDB; User Id=sa; Password=Pa$$w0rd2019; TrustServerCertificate=true"
-#OnboardingDb="Server=localhost;Database=OnboardingDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
+ENV OnboardingDb="Server=192.168.0.246,1433;Database=OnboardingDb;Trusted_Connection=false;TrustServerCertificate=True;User Id=sa;Password=Pa$$w0rd2019"
 
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
